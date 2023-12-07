@@ -38,7 +38,8 @@ class Almanac:
     seeds: list[int]
     maps: list[AlmanacMap]
 
-    def from_input(lines: list[str]) -> Almanac:
+    @classmethod
+    def from_input(cls, lines: list[str]) -> Almanac:
         seeds = [int(seed) for seed in lines[0].split(" ")[1:]]
         maps = []
         for line in lines[2:]:
