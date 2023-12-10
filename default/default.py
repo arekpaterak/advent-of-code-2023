@@ -18,3 +18,9 @@ INPUTS = ["input.txt", "example.txt"]
 if __name__ == "__main__":
     input_file_index = sys.argv[1]
     input_file = INPUTS[int(input_file_index)]
+
+    print("--- Part One ---")
+    print("Answer:")
+
+    print("--- Part Two ---")
+    print("Answer:")
