@@ -1,13 +1,8 @@
 from __future__ import annotations
 from functools import reduce
-import random
 
 import sys
 from dataclasses import dataclass
-import math
-import numpy as np
-import re
-import itertools
 
 
 INPUTS = ["input.txt", "example.txt"]

@@ -1,15 +1,7 @@
 from __future__ import annotations
-from enum import Enum, auto
-from functools import cache, reduce, total_ordering
-import random
+from functools import cache
 
 import sys
-from dataclasses import dataclass
-import math
-import numpy as np
-import re
-import itertools
-import sympy
 
 
 INPUTS = [
@@ -22,7 +14,7 @@ def parse_input(input_file):
     with open(input_file, "r") as f:
         for line in f.readlines():
             springs, damaged_groups_sizes = line.strip().split()
-            yield springs, list(map(int, damaged_groups_sizes.split(",")))
+            yield springs, tuple(map(int, damaged_groups_sizes.split(",")))
 
 
 # Part One
@@ -118,7 +110,7 @@ if __name__ == "__main__":
 
     for springs, group_sizes in records:
         possible_arrangements_count += get_number_of_possible_arrangements(
-            springs, tuple(group_sizes)
+            springs, group_sizes
         )
 
     print("Answer:")
@@ -128,7 +120,7 @@ if __name__ == "__main__":
     possible_arrangements_count = 0
     for springs, group_sizes in records:
         possible_arrangements_count += get_number_of_possible_arrangements(
-            "?".join([springs] * 5), tuple(5 * group_sizes)
+            "?".join([springs] * 5), 5 * group_sizes
         )
 
     print("Answer:")

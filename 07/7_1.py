@@ -1,15 +1,9 @@
 from __future__ import annotations
 from enum import Enum, auto
-from functools import reduce, total_ordering
-import random
+from functools import total_ordering
 
 import sys
 from dataclasses import dataclass
-import math
-import numpy as np
-import re
-import itertools
-import sympy
 
 
 INPUTS = ["input.txt", "example.txt"]

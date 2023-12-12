@@ -1,5 +1,4 @@
 import sys
-import re
 
 
 INPUTS = ["input.txt", "example1.txt", "example2.txt"]
