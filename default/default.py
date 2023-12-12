@@ -12,7 +12,10 @@ import itertools
 import sympy
 
 
-INPUTS = ["input.txt", "example.txt"]
+INPUTS = [
+    "input.txt",
+    "example.txt",
+]
 
 
 if __name__ == "__main__":

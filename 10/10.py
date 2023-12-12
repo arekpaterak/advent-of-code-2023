@@ -29,7 +29,7 @@ pipes_to_directions: dict[str, str] = {
 }
 
 
-def get_next_pipe(
+def get_next_pipe_with_direction(
     grid: np.ndarray, x: int, y: int, last_direction: str
 ) -> tuple[tuple[int, int], str]:
     def get_direction(pipe: str, last_direction: str) -> str:
@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
     loop = []
     for direction in ["N", "E", "S", "W"]:
-        next_tile = get_next_pipe(grid, *start_tile, direction)
+        next_tile = get_next_pipe_with_direction(grid, *start_tile, direction)
         if is_pipe(grid, *next_tile[0]):
             loop.append(next_tile[0])
             break
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     while grid[next_tile[0]] != "S":
         (x, y), direction = next_tile
-        next_tile = get_next_pipe(grid, x, y, direction)
+        next_tile = get_next_pipe_with_direction(grid, x, y, direction)
         loop.append(next_tile[0])
 
     print("Answer:")
